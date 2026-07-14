@@ -52,6 +52,20 @@ export const GoogleSheetSettingsModal: React.FC<GoogleSheetSettingsModalProps> =
     alert('บันทึกการตั้งค่า Google Sheet เรียบร้อยแล้ว!');
   };
 
+  const handleClearSettings = () => {
+    if (window.confirm('คุณต้องการล้างการเชื่อมต่อ Google Sheet และสคริปต์ทั้งหมดใช่หรือไม่?')) {
+      setSheetUrl('');
+      setSheetId('');
+      setGasUrl('');
+      localStorage.removeItem('tg18_sheet_url');
+      localStorage.removeItem('tg18_sheet_id');
+      localStorage.removeItem('tg18_gas_url');
+      setTestStatus('idle');
+      setTestMessage('');
+      alert('ล้างข้อมูลการเชื่อมต่อและสคริปต์เรียบร้อยแล้ว!');
+    }
+  };
+
   // Generate dynamic GAS script
   const getGasScriptCode = () => {
     const targetId = sheetId || 'คัดลอก_ID_จากลิงก์ชีทมาวางที่นี่';
@@ -353,7 +367,14 @@ export const GoogleSheetSettingsModal: React.FC<GoogleSheetSettingsModalProps> =
             * สคริปต์นี้ปลอดภัย เป็นการส่งข้อมูลเข้า Google Sheets ส่วนตัวของท่านโดยตรง ไม่ผ่านเซิร์ฟเวอร์บุคคลที่สาม
           </div>
           
-          <div className="flex gap-2">
+          <div className="flex gap-2 flex-wrap justify-end">
+            <button
+              onClick={handleClearSettings}
+              className="px-3 py-1.5 bg-white hover:bg-red-50 text-red-600 border border-red-200 font-bold rounded text-xs cursor-pointer transition active:scale-95"
+            >
+              ล้างการเชื่อมต่อ
+            </button>
+
             <button
               onClick={handleSaveSettings}
               className="px-4 py-1.5 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded text-xs cursor-pointer transition active:scale-95"

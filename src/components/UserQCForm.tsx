@@ -96,7 +96,7 @@ export const UserQCForm: React.FC<UserQCFormProps> = ({ onSubmitReport, onCancel
     e.preventDefault();
     const newErrors: Record<string, string> = {};
     if (!inspectorName.trim()) newErrors.inspectorName = 'กรุณากรอกชื่อ-นามสกุลผู้ตรวจสอบ';
-    if (!hospitalName.trim()) newErrors.hospitalName = 'กรุณากรอกชื่อโรงพยาบาล';
+    if (!hospitalName.trim()) newErrors.hospitalName = 'กรุณากรอกชื่อโรงพยาบาล/ชื่อแผนก/ชื่อห้อง';
     if (!monitorNo.trim()) newErrors.monitorNo = 'กรุณากรอกหมายเลขจอภาพ';
     if (!testDate) newErrors.testDate = 'กรุณาเลือกวันที่ตรวจสอบ';
 
@@ -235,7 +235,7 @@ export const UserQCForm: React.FC<UserQCFormProps> = ({ onSubmitReport, onCancel
               {/* Hospital Name */}
               <div className="flex flex-col md:flex-row md:items-center gap-2">
                 <label className="md:w-1/3 text-slate-600 font-semibold text-xs flex items-center gap-1">
-                  <span className="text-red-500 font-bold">*</span>ชื่อโรงพยาบาล :
+                  <span className="text-red-500 font-bold">*</span>ชื่อโรงพยาบาล/ชื่อแผนก/ชื่อห้อง :
                 </label>
                 <div className="md:w-2/3">
                   <div className="relative">
@@ -244,7 +244,7 @@ export const UserQCForm: React.FC<UserQCFormProps> = ({ onSubmitReport, onCancel
                       type="text"
                       value={hospitalName}
                       onChange={(e) => setHospitalName(e.target.value)}
-                      placeholder="เช่น โรงพยาบาลมหาราช, รพ.รามาธิบดี"
+                      placeholder="เช่น รพ.แม่ทา/แผนกรังสี/ห้องตรวจ1"
                       className={`w-full pl-8 pr-2.5 py-1 bg-white border rounded text-xs text-slate-800 focus:outline-none focus:ring-1 focus:ring-sky-500 transition ${
                         errors.hospitalName ? 'border-red-500' : 'border-slate-300'
                       }`}

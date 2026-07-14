@@ -194,7 +194,7 @@ export const ReportSummary: React.FC<ReportSummaryProps> = ({
               <div className="space-y-2.5">
                 {/* Hospital Name (Editable) */}
                 <div className="flex flex-col gap-1">
-                  <label className="text-[10px] font-bold text-slate-400 uppercase">ชื่อโรงพยาบาล :</label>
+                  <label className="text-[10px] font-bold text-slate-400 uppercase">ชื่อโรงพยาบาล/ชื่อแผนก/ชื่อห้อง :</label>
                   <input
                     type="text"
                     value={hospitalName}

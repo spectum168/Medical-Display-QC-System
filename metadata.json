@@ -1,0 +1,6 @@
+{
+  "name": "Medical Display QC System",
+  "description": "AAPM TG18-QC Medical Display Quality Control System for Google Apps Script and Sheets",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

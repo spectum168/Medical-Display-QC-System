@@ -241,7 +241,7 @@ export default function App() {
                 ผู้พัฒนาโปรแกรม Medical Display QC System 2026
               </h4>
               <div className="text-[11px] text-slate-300 space-y-1">
-                <p className="font-bold text-slate-100 text-xs">Sittisak Laohakul</p>
+                <p className="font-bold text-slate-100 text-xs">xraymaetha@gmail.com</p>
                 <p>Radiologic Technology Department, MaeTha Hospital</p>
               </div>
             </div>
